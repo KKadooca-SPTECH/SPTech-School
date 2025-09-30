@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  <title>SPTecher's Machine</title>
+</head>
+<body>
+
+   <!-- <div class="banner">
+    <img src="kk.jpg" alt="Banner GTA Style">
+  </div> -->
+
+  <div class="menu" id="menu">
+    <div class="titulo">Pause Menu</div>
+    <div class="opcao" onclick="calculadora()">Converter</div>
+    <div class="opcao">Start New Game</div>
+    <div class="opcao">Options</div>
+    <div class="opcao">Quit Game</div>
+  </div>
+
+  <div class="conteudo" id="calc">
+    <h1>Kadooca's Machine</h1>
+
+    <h3>Digite um número:</h3>
+    <input id="numero" type="text" placeholder="Ex: 42">
+    <br>
+
+    <h3>Escolha a base do número:</h3>
+    <select id="base">
+      <option value="10">Decimal</option>
+      <option value="2">Binário</option>
+      <option value="8">Octal</option>
+      <option value="16">Hexadecimal</option>
+    </select>
+    <br><br>
+
+    <button onclick="converter()">Converter</button>
+
+    <div class="resultado">
+      <p>Decimal: <span id="dec"></span></p>
+      <p>Binário: <span id="bin"></span></p>
+      <p>Octal: <span id="oct"></span></p>
+      <p>Hexadecimal: <span id="hex"></span></p>
+    </div>
+
+    <button class="voltar" onclick="voltarMenu()">Voltar ao Menu</button>
+  </div>
+
+  <script>
+    function calculadora() {
+      document.getElementById("menu").style.display = "none";
+      document.getElementById("calc").style.display = "block";
+    }
+
+    function voltarMenu() {
+      document.getElementById("calc").style.display = "none";
+      document.getElementById("menu").style.display = "flex";
+    }
+
+    function converter() {
+      let numero = document.getElementById("numero").value.trim();
+      let base = parseInt(document.getElementById("base").value);
+
+      if (numero === "") {
+        alert("Digite um número!");
+        return;
+      }
+
+      let decimal = parseInt(numero, base);
+      if (isNaN(decimal)) {
+        alert("Número inválido para a base selecionada!");
+        return;
+      }
+
+      document.getElementById("dec").innerText = decimal.toString(10);
+      document.getElementById("bin").innerText = decimal.toString(2);
+      document.getElementById("oct").innerText = decimal.toString(8);
+      document.getElementById("hex").innerText = decimal.toString(16).toUpperCase();
+    }
+  </script>
+
+</body>
+</html>
