@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Temperatura e Umidade</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 40px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        .chart-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .chart-box {
+            width: 45%;
+            min-width: 350px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            width: 100% !important;
+            height: 300px !important;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dashboard - Temperatura e Umidade</h2>
+    <div class="chart-container">
+        <div class="chart-box">
+            <canvas id="lineChart"></canvas>
+        </div>
+        <div class="chart-box">
+            <canvas id="barChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('barChart');
+
+        new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [
+            {
+                label: 'Temperatura Média (°C)',
+                data: [22, 24, 27, 23, 20, 18],
+                backgroundColor: '#ff3333',
+                borderWidth: 2
+            },
+            {
+                label: 'Umidade Média (%)',
+                data: [90, 89, 93, 87, 88, 82],
+                backgroundColor: '#40E0D0',
+                borderWidth: 2
+            }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        }
+        });
+
+
+        const ctl = document.getElementById('lineChart');
+
+        new Chart(ctl, {
+        type: 'line',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [
+            {
+                label: 'Temperatura Média (°C)',
+                data: [22, 24, 27, 23, 20, 18],
+                backgroundColor: '#ff3333',
+                borderWidth: 2
+            },
+            {
+                label: 'Umidade Média (%)',
+                data: [90, 89, 93, 87, 88, 82],
+                backgroundColor: '#40E0D0',
+                borderWidth: 2
+            }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        }
+        });
+    </script>
+</body>
+</html>

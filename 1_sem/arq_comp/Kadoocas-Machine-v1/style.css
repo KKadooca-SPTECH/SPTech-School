@@ -1,0 +1,75 @@
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      background-image: url("grggg.jpg"); /* sua imagem GTA */
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Tela do Menu Pause */
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: rgba(0,0,0,0.7);
+    }
+    .titulo {
+      font-size: 42px;
+      font-weight: bold;
+      color: #d4af37; /* dourado GTA */
+      font-family: "Georgia", serif;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 2px #000;
+    }
+    .opcao {
+      font-size: 22px;
+      margin: 10px 0;
+      cursor: pointer;
+      color: #a89048;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .opcao:hover {
+      color: #f2b705;
+      transform: scale(1.1);
+    }
+
+    /* Tela da calculadora */
+    .conteudo {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: rgba(0,0,0,0.85);
+      height: 100vh;
+      color: #f2f2f2;
+    }
+    input, select, button {
+      padding: 8px;
+      margin: 6px 0;
+      font-size: 16px;
+      border: none;
+      outline: none;
+    }
+    button {
+      background: #d4af37;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #b9962e;
+    }
+    .resultado {
+      margin-top: 16px;
+      font-size: 18px;
+    }
+    .voltar {
+      margin-top: 30px;
+      background: #a89048;
+    }
+    .voltar:hover {
+      background: #8a7638;
+    }
